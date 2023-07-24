@@ -1,5 +1,4 @@
 #include <iostream>
-#include "count.cpp"
 
 // The `extern` keyword tells the compiler that the count function exists,
 // but will be implemented somewhere else
