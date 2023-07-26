@@ -2,7 +2,7 @@
 using namespace std;
 
 int median_array(int array[], int n){
-  if (n < 1){
+  if (n < 1 or n%2==0){
     return 0;
   }
   int i, key, j;
@@ -15,10 +15,5 @@ int median_array(int array[], int n){
     }
     array[j + 1] = key;
   }
-  if(n%2!=0){
-    return array[(n-1)/2];
-  }
-  else{
-    return int((array[n/2]+array[n/2-1])/2);
-  }
+  return array[(n-1)/2];
 }
