@@ -1,5 +1,4 @@
 #include <iostream>
-#include "function-3-2.cpp"
 
 extern int median_array(int[], int);
 

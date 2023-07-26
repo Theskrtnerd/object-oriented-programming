@@ -1,5 +1,4 @@
 #include <iostream>
-#include "function-3-3.cpp"
 
 extern double weighted_average(int[], int);
 

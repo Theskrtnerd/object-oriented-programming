@@ -1,5 +1,4 @@
 #include <iostream>
-#include "function-1-1.cpp"
 
 extern int array_sum(int[], int);
 

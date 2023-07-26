@@ -1,5 +1,4 @@
 #include <iostream>
-#include "function-2-4.cpp"
 
 extern bool is_ascending(int[], int);
 

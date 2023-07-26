@@ -1,5 +1,4 @@
 #include <iostream>
-#include "function-3-1.cpp"
 
 extern bool is_fanarray(int[], int);
 

@@ -1,5 +1,4 @@
 #include <iostream>
-#include "function-3-5.cpp"
 
 extern double sum_even(double[], int);
 

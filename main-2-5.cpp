@@ -1,5 +1,4 @@
 #include <iostream>
-#include "function-2-5.cpp"
 
 extern bool is_descending(int[], int);
 

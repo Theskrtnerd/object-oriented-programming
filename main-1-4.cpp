@@ -1,5 +1,4 @@
 #include <iostream>
-#include "function-1-4.cpp"
 
 extern int sum_two_arrays(int[], int[], int);
 
