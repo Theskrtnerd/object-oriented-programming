@@ -21,6 +21,6 @@ int basetentotwo(int n){
 }
 
 int main(){
-  std::cout << basetentotwo(12);
+  cout << basetentotwo(12);
   return 0;
 }
