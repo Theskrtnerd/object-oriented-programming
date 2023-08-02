@@ -1,6 +1,6 @@
 #include<iostream>
 
-extern void binary_to_int(int[],int);
+extern int binary_to_int(int[],int);
 
 int main(){
   int binary_digits[10] = {1,0,0,0,1,0,0,1,0,1};
