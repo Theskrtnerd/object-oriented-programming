@@ -15,7 +15,6 @@ long long basetentotwo(long long n){
   long long ans = 0;
   while(n>0){
     ans = ans + (n%2)*pow10(count);
-    cout << ans << endl;
     n = floor(n/2);
     count++;
   }
@@ -24,7 +23,6 @@ long long basetentotwo(long long n){
 
 void print_binary_str(string decimal_number){
   long long number = stoi(decimal_number);
-  cout << number << endl;
   long long output_number = basetentotwo(number);
   cout << output_number;
 }
