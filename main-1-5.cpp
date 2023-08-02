@@ -1,5 +1,4 @@
 #include<iostream>
-#include "function-1-5.cpp"
 
 extern void print_summed(int[3][3],int[3][3]);
 

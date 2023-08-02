@@ -1,5 +1,4 @@
 #include<iostream>
-#include "function-1-4.cpp"
 
 extern void print_scaled(int[3][3],int);
 

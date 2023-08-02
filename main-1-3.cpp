@@ -1,5 +1,4 @@
 #include<iostream>
-#include "function-1-3.cpp"
 
 extern void count_digits(int[4][4]);
 

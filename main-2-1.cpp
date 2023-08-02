@@ -1,5 +1,5 @@
 #include<iostream>
-#include "function-2-1.cpp"
+#include<string>
 
 extern void print_binary_str(string);
 

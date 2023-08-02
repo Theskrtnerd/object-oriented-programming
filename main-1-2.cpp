@@ -1,5 +1,4 @@
 #include<iostream>
-#include "function-1-2.cpp"
 
 extern int is_identity(int[10][10]);
 

@@ -1,5 +1,4 @@
 #include<iostream>
-#include "function-1-1.cpp"
 
 extern int sum_diagonal(int[4][4]);
 
