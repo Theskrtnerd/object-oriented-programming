@@ -1,5 +1,4 @@
 #include<iostream>
-#include "function-1-3.cpp"
 
 using namespace std;
 
