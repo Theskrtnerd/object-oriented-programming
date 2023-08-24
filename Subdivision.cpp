@@ -38,5 +38,5 @@ bool Subdivision::add_House(House new_house){
 };
 
 Subdivision::~Subdivision(){
-  delete _list;
+  delete[] _list;
 }; // destructor
