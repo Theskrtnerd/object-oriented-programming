@@ -21,6 +21,4 @@ int House::get_lot_number(){
   return _lotNumber;
 };                        // returns the house's lot number
 
-House::~House(){
-  cout << "House removed";
-};
+House::~House(){};
