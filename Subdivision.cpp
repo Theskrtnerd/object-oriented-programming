@@ -7,14 +7,14 @@ Subdivision::Subdivision(){
   _subName = "";
   _size = 0;
   _maxsize = 0;
-  _list = new House();
+  _list = new House[_maxsize];
 };                  
              // default constructor
 Subdivision::Subdivision(std::string subName, int size){
   _subName = subName;
   _maxsize = size;
   _size = 0;
-  _list = new House();
+  _list = new House[_maxsize];
 };
 
 int Subdivision::get_num_houses(){
