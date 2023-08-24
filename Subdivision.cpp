@@ -13,6 +13,8 @@ Subdivision::Subdivision(){
 Subdivision::Subdivision(std::string subName, int size){
   _subName = subName;
   _maxsize = size;
+  _size = 0;
+  _list = new House();
 };
 
 int Subdivision::get_num_houses(){
