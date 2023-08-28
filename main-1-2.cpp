@@ -1,10 +1,10 @@
 #include<iostream>
 using namespace std;
-#include "car.h"
-#include "bus.h"
-#include "motorbike.h"
-#include "vehicle.h"
-#include "parkinglot.h"
+#include "Car.h"
+#include "Bus.h"
+#include "Motorbike.h"
+#include "Vehicle.h"
+#include "ParkingLot.h"
 
 int main(){
   ParkingLot lot(10);
