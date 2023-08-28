@@ -5,7 +5,7 @@
 class ParkingLot{
   private:
     int _maxSize;
-    Vehicle* _vehicles[_maxSize];
+    Vehicle* _vehicles;
     int _size;
   public:
     ParkingLot(int maxSize);
