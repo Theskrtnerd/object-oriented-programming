@@ -14,16 +14,13 @@ int main(){
     cin >> initial;
     switch(initial){
       case 'C':
-        Car myCar(i+1);
-        lot.parkVehicle(&myCar);
+        lot.parkVehicle(&Car(i+1));
         break;
       case 'B':
-        Bus myBus(i+1);
-        lot.parkVehicle(&myBus);
+        lot.parkVehicle(&Bus(i+1));
         break;
       case 'M':
-        Motorbike myMotorbike(i+1);
-        lot.parkVehicle(&myMotorbike);
+        lot.parkVehicle(&Motorbike(i+1));
         break;
       default:
         cout << "Error!";
