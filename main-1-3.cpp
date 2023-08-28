@@ -1,11 +1,10 @@
 #include<iostream>
 using namespace std;
-#include "car.h"
-#include <windows.h>
-#include "bus.h"
-#include "motorbike.h"
-#include "vehicle.h"
-#include "parkinglot.h"
+#include "Car.h"
+#include "Bus.h"
+#include "Motorbike.h"
+#include "Vehicle.h"
+#include "Parkinglot.h"
 
 int main(){
   ParkingLot lot(10);
@@ -28,6 +27,5 @@ int main(){
         break;
     }
   }
-  Sleep(18000);
   cout << "The number of over staying vehicles is " << lot.countOverstayingVehicles(15); 
 }

@@ -1,5 +1,5 @@
 #include<iostream>
-#include "bus.h"
+#include "Bus.h"
 using namespace std;
 
 Bus::Bus(int ID): Vehicle(ID){};

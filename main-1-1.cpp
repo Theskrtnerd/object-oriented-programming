@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-#include <windows.h>
 #include "car.h"
 #include "bus.h"
 #include "motorbike.h"
@@ -30,7 +29,6 @@ int main(){
         break;
     }
   }
-  Sleep(30000);
 
   for(int i = 0; i<number;i++){
     cout << vehicles[i]->getParkingDuration() << endl;

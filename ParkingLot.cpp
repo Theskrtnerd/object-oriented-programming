@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-#include "parkinglot.h"
+#include "ParkingLot.h"
 
 ParkingLot::ParkingLot(int maxSize): _maxSize(maxSize){
   _size = 0;
