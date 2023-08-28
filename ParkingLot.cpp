@@ -15,7 +15,6 @@ void ParkingLot::parkVehicle(Vehicle* vehicle){
   if (_size < _maxSize){
     _vehicles[_size] = *vehicle;
     _size++;
-    cout << "Park vehicle successfully." << endl;
   }
   else{
     cout << "The lot is full" << endl;
@@ -34,7 +33,6 @@ void ParkingLot::unparkVehicle(int ID){
   }
   if(removed == true){
       _size--;
-      cout << "Unpark Vehicle Successfully" << endl;
   }
   else{
     cout << "Vehicle not in the lot" << endl;
