@@ -11,9 +11,9 @@ int ParkingLot::getCount(){
   return _size;
 }
 
-void ParkingLot::parkVehicle(Vehicle vehicle){
+void ParkingLot::parkVehicle(Vehicle* vehicle){
   if (_size < _maxSize){
-    _vehicles[_size] = vehicle;
+    _vehicles[_size] = &vehicle;
     _size++;
     cout << "Park vehicle successfully." << endl;
   }
