@@ -12,7 +12,6 @@ int main(){
   for(int i=0;i<11;i++){
     cout << "Enter a vehicle initial: ";
     cin >> initial;
-    cout << endl;
     switch(initial){
       case 'C':
         lot.parkVehicle(Car(i+1));

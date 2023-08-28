@@ -17,7 +17,9 @@ void ParkingLot::parkVehicle(Vehicle vehicle){
     _size++;
     cout << "Park vehicle successfully." << endl;
   }
-  cout << "The lot is full" << endl;
+  else{
+    cout << "The lot is full" << endl;
+  }
 }
 
 void ParkingLot::unparkVehicle(int ID){
@@ -34,5 +36,7 @@ void ParkingLot::unparkVehicle(int ID){
       _size--;
       cout << "Unpark Vehicle Successfully" << endl;
   }
-  cout << "Vehicle not in the lot" << endl;
+  else{
+    cout << "Vehicle not in the lot" << endl;
+  }
 }
