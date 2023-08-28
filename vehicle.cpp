@@ -14,5 +14,5 @@ int Vehicle::getID(){
 }
 
 int Vehicle::getParkingDuration(){
-  return this -> timeOfEntry;
+  return time(NULL) - this->timeOfEntry;
 }
