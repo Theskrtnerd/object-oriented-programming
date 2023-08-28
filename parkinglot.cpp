@@ -11,7 +11,7 @@ int ParkingLot::getCount(){
   return _size;
 }
 
-void ParkingLot::parkVehicle(Vehicle* vehicle){
+void ParkingLot::parkVehicle(Vehicle vehicle){
   if (_size < _maxSize){
     _vehicles[_size] = vehicle;
     _size++;
@@ -32,6 +32,5 @@ void ParkingLot::unparkVehicle(int ID){
     if(removed == true){
       _size--;
     }
-
   }
 }
