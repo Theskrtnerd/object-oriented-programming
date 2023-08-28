@@ -14,7 +14,7 @@ int main(){
     cin >> initial;
     switch(initial){
       case 'C':
-        lot.parkVehicle(1);
+        lot.parkVehicle(Car(i+1));
         break;
       case 'B':
         lot.parkVehicle(Bus(i+1));
