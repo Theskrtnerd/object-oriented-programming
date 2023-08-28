@@ -4,7 +4,7 @@ using namespace std;
 
 ParkingLot::ParkingLot(int maxSize): _maxSize(maxSize){
   _size = 0;
-  _vehicles = new Vehicle[maxSize];
+  _vehicles = new Vehicle(0)[maxSize];
 };
 
 int ParkingLot::getCount(){
