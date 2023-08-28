@@ -18,10 +18,12 @@ int main(){
         lot.parkVehicle(*vehicle);
         break;
       case 'B':
-        lot.parkVehicle(Bus(i+1));
+        Vehicle *vehicle = new Bus(i+1);
+        lot.parkVehicle(*vehicle);
         break;
       case 'M':
-        lot.parkVehicle(Motorbike(i+1));
+        Vehicle *vehicle = new Motorbike(i+1);
+        lot.parkVehicle(*vehicle);
         break;
       default:
         cout << "Error!";
