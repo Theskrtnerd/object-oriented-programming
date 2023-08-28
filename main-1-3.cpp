@@ -4,7 +4,7 @@ using namespace std;
 #include "Bus.h"
 #include "Motorbike.h"
 #include "Vehicle.h"
-#include "Parkinglot.h"
+#include "ParkingLot.h"
 
 int main(){
   ParkingLot lot(10);
@@ -14,16 +14,13 @@ int main(){
     cin >> initial;
     switch(initial){
       case 'C':
-        Vehicle *vehicle = new Car(i+1);
-        lot.parkVehicle(*vehicle);
+        lot.parkVehicle(Car(i+1));
         break;
       case 'B':
-        Vehicle *vehicle = new Bus(i+1);
-        lot.parkVehicle(*vehicle);
+        lot.parkVehicle(Bus(i+1));
         break;
       case 'M':
-        Vehicle *vehicle = new Motorbike(i+1);
-        lot.parkVehicle(*vehicle);
+        lot.parkVehicle(Motorbike(i+1));
         break;
       default:
         cout << "Error!";
