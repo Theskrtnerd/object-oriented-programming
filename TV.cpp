@@ -20,5 +20,5 @@ void TV::setScreenSize(double screenSize){
 }
 
 double TV::getPowerConsumption(){
-  return this->powerRating*(this->screenSize/100);
+  return this->powerRating*(this->screenSize/10);
 }
