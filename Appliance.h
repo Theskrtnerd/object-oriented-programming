@@ -2,7 +2,7 @@
 #define APPLIANCE_H
 
 class Appliance{
-  private:
+  protected:
     int powerRating;
     bool isOn;
   public:
