@@ -3,6 +3,7 @@ using namespace std;
 #include "Car.h"
 
 Car::Car(){
+  this->price = 0;
   this->emissions = 0;
 };
 
