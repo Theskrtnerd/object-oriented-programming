@@ -2,7 +2,7 @@
 #define CAR_H
 
 class Car {
-  private:
+  protected:
     int price;
     int emissions;
   public:
