@@ -22,3 +22,7 @@ Car** Fleet::get_fleet(){
   return this->fleet;
 }
 
+Fleet:~Fleet(){
+  delete[] this->fleet;
+}
+
