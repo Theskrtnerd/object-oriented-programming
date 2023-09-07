@@ -18,11 +18,21 @@ float Ford::get_litresOfFuel(){return this-> litresOfFuel;}
 void Ford::set_badgeNumber(int badgeNumber){this->badgeNumber = badgeNumber;}
 
 void Ford::set_litresOfFuel(int litresOfFuel){
-  this->litresOfFuel = litresOfFuel;
+  if (litresOfFuel < 0){
+    this->litresOfFuel = 0;
+  }
+  else{
+    if(litresOfFuel > 100){
+      this->litresOfFuel = 100;
+    }
+    else{
+      this->litresOfFuel = litresOfFuel;
+    }
+  }
 }
 
 void Ford::refuel(int litres){
-  this->litresOfFuel += litres;
+  this->litresOfFuel = min(float(60), float(this->litresOfFuel+litres));
 }
 
 void Ford::drive(int kms){ 
