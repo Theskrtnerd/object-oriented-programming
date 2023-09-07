@@ -32,8 +32,7 @@ void Tesla::set_batteryPercentage(int batteryPercentage){
 }
 
 void Tesla::chargeBattery(int mins){
-  float bruh = this->batteryPercentage+0.5*mins;
-  this->batteryPercentage = min(float(100), bruh);
+  this->batteryPercentage = min(float(100), float(this->batteryPercentage+0.5*float(mins)));
 }
 
 void Tesla::drive(int kms){ 
