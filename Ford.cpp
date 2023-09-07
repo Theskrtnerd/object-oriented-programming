@@ -28,6 +28,7 @@ void Ford::refuel(int litres){
 void Ford::drive(int kms){ 
   float kms_max_drive = this->litresOfFuel / 0.2;
   this->emissions += min(float(kms),kms_max_drive)*234;
+  this->litresOfFuel -= min(float(kms),kms_max_drive)*0.2;
 }
 
 
