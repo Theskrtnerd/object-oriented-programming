@@ -13,7 +13,7 @@ Ford::Ford(int badgeNumber,int price): Car(price){
 
 char Ford::get_badgeNumber(){return this-> badgeNumber;}
 
-int Ford::get_litresOfFuel(){return this-> litresOfFuel;}
+float Ford::get_litresOfFuel(){return this-> litresOfFuel;}
 
 void Ford::set_badgeNumber(int badgeNumber){this->badgeNumber = badgeNumber;}
 

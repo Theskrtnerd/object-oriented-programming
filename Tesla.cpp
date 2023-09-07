@@ -13,7 +13,7 @@ Tesla::Tesla(char model,int price): Car(price){
 
 char Tesla::get_model(){return this-> model;}
 
-int Tesla::get_batteryPercentage(){return this-> batteryPercentage;}
+float Tesla::get_batteryPercentage(){return this-> batteryPercentage;}
 
 void Tesla::set_model(char model){this->model = model;}
 
