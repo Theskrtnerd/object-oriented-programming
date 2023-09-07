@@ -18,20 +18,28 @@ int Tesla::get_batteryPercentage(){return this-> batteryPercentage;}
 void Tesla::set_model(char model){this->model = model;}
 
 void Tesla::set_batteryPercentage(int batteryPercentage){
-  if (batteryPercentage < 0){this->batteryPercentage = 0;}
+  if (batteryPercentage < 0){
+    this->batteryPercentage = 0;
+  }
   else{
-    if(batteryPercentage > 100){this->batteryPercentage = 100;}
-    else{this->batteryPercentage = batteryPercentage;}
+    if(batteryPercentage > 100){
+      this->batteryPercentage = 100;
+    }
+    else{
+      this->batteryPercentage = batteryPercentage;
+    }
   }
 }
 
 void Tesla::chargeBattery(int mins){
-  this->batteryPercentage = min(float(100), float(this->batteryPercentage+0.5*mins));
+  float bruh = this->batteryPercentage+0.5*mins;
+  this->batteryPercentage = min(float(100), bruh);
 }
 
 void Tesla::drive(int kms){ 
   float kms_max_drive = this->batteryPercentage / 0.2;
   this->emissions += min(float(kms),kms_max_drive)*74;
+  this->batteryPercentage -= min(float(kms),kms_max_drive)*0.2;
 }
 
 
