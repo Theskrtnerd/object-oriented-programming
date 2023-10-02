@@ -8,19 +8,10 @@ class Invoice {
     int _dollarOwed;
 
   public:
-    Invoice(std::string invoiceId){
-      _dollarOwed = 0;
-      _invoiceId = invoiceId;
-    };
-    void addServiceCost(int costDollars){
-      _dollarOwed += costDollars;
-    };
-    int getDollarsOwed(){
-      return _dollarOwed;
-    };
+    Invoice(std::string invoiceId);
+    void addServiceCost(int costDollars);
+    int getDollarsOwed();
 
-    std::string getInvoiceId(){
-      return _invoiceId;
-    };
+    std::string getInvoiceId();
 
 };
