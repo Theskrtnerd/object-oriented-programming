@@ -9,7 +9,7 @@ class Utils{
     public:
         Utils(){};
         std::tuple<int, int> generateRandomPos(int gridWidth, int gridHeight){
-            std::tuple tuple(std::rand() % (gridWidth+1), std::rand() % (gridHeight+1));
+            std::tuple<int, int> tuple(std::rand() % (gridWidth+1), std::rand() % (gridHeight+1));
             return tuple;
         };
         double calculateDistance(std::tuple<int, int> pos1, std::tuple<int, int> pos2){
