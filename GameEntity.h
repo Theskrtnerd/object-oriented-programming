@@ -4,7 +4,7 @@
 #include <tuple> 
 
 class GameEntity{
-    private:
+    protected:
         std::tuple<int, int> position;
         char type;
     public:
@@ -18,6 +18,12 @@ class GameEntity{
         char getType(){
             return type;
         };
+        void setPosition(int x, int y){
+            position = std::make_tuple(x, y);
+        }
+        void setChar(char type){
+            this->type = type;
+        }
         ~GameEntity(){};
 };
 
