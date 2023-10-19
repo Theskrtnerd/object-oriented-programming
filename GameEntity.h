@@ -21,7 +21,7 @@ class GameEntity{
         void setPosition(int x, int y){
             position = std::make_tuple(x, y);
         }
-        void setChar(char type){
+        void setType(char type){
             this->type = type;
         }
         ~GameEntity(){};

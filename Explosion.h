@@ -10,7 +10,7 @@ class Explosion: public GameEntity, public Effect{
         Explosion(int x, int y): GameEntity(x, y, 'E'){};
         void apply(GameEntity& entity){
             entity.setPosition(-1,-1);
-            entity.setChar('X');
+            entity.setType('X');
         };
         ~Explosion(){};
 };
