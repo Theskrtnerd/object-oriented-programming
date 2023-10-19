@@ -3,13 +3,17 @@
 
 #include <tuple>
 #include "GameEntity.h"
+#include <cmath>
 
 class Utils{
     public:
-        Utils();
+        Utils(){};
         std::tuple<int, int> generateRandomPos(int gridWidth, int gridHeight);
-        double calculateDistance(std::tuple<int, int> pos1, std::tuple<int, int> pos2); 
-        ~Utils();
+        double calculateDistance(std::tuple<int, int> pos1, std::tuple<int, int> pos2){
+            return std::sqrt((std::get<0>(pos1) - std::get<0>(pos2))*(std::get<0>(pos1) - std::get<0>(pos2)) 
+                + (std::get<1>(pos1) - std::get<1>(pos2))*(std::get<1>(pos1) - std::get<1>(pos2)));
+        }; 
+        ~Utils(){};
 };
 
 #endif
