@@ -7,6 +7,7 @@
 
 class Mine: public GameEntity{
     public:
+        Mine(): GameEntity(){};
         Mine(int x, int y): GameEntity(x, y, 'M'){};
         Explosion explode(){
             this->setType('X');

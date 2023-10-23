@@ -14,7 +14,8 @@ class Game{
         std::vector<Ship> ships;
         std::vector<Mine> mines;
     public:
-        Game(){};
+        Game(){
+        };
         std::vector<GameEntity*> get_entities(){
             return entities;
         };
@@ -22,24 +23,23 @@ class Game{
             entities = entities_;
         };
         std::vector<GameEntity*> initGame(int numShips, int numMines, int gridWidth, int gridHeight){
-            Utils util;
+            // Utils util;
+            this->ships.resize(numShips);
+            this->mines.resize(numMines);
+            this->entities.resize(numShips+numMines);
             for(int i=0;i<numShips;i++){
-                std::tuple<int, int> pos = util.generateRandomPos(gridHeight, gridHeight);
+                std::tuple<int, int> pos = Utils::generateRandomPos(gridHeight, gridHeight);
                 int x = std::get<0>(pos);
                 int y = std::get<1>(pos);
-                Ship ship(x,y);
-                Ship* ship_ptr = &ship;
-                entities.push_back(ship_ptr);
-                ships.push_back(ship);
+                this->ships[i] = Ship(x,y);
+                this->entities[i] = &this->ships[i];
             }
-            for(int i=0;i<numMines;i++){
-                std::tuple<int, int> pos = util.generateRandomPos(gridHeight, gridHeight);
+            for(int j=0;j<numMines;j++){
+                std::tuple<int, int> pos = Utils::generateRandomPos(gridHeight, gridHeight);
                 int x = std::get<0>(pos);
                 int y = std::get<1>(pos);
-                Mine mine(x,y);
-                Mine* mine_ptr = &mine;
-                entities.push_back(mine_ptr);
-                mines.push_back(mine);
+                this->mines[j] = Mine(x,y);
+                this->entities[numShips+j] = &this->mines[j];
             }
             return entities;
         }
@@ -62,6 +62,7 @@ class Game{
                 check:
                     bool isShip = false;
                     for(int i=0; i<entities.size(); i++){
+                        std::cout << entities[i]->getType() << std::endl;
                         if(entities[i]->getType() == 'S'){
                             isShip = true;
                         }

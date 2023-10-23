@@ -6,9 +6,10 @@
 class GameEntity{
     protected:
         std::tuple<int, int> position;
-        char type;
+        char type_;
     public:
-        GameEntity(int x, int y, char type): type(type){
+        GameEntity(){};
+        GameEntity(int x, int y, char type): type_(type){
             position = std::make_tuple(x, y);
         };
         std::tuple<int, int> getPos(){
@@ -16,13 +17,13 @@ class GameEntity{
             return tuple;
         };
         char getType(){
-            return type;
+            return type_;
         };
         void setPosition(int x, int y){
             position = std::make_tuple(x, y);
         }
         void setType(char type){
-            this->type = type;
+            this->type_ = type;
         }
         ~GameEntity(){};
 };

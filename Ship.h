@@ -6,6 +6,7 @@
 
 class Ship: public GameEntity{
     public:
+        Ship(): GameEntity(){};
         Ship(int x, int y): GameEntity(x, y, 'S'){};
         void move(int dx, int dy){
             std::tuple<int, int> position_ = this->getPos();
