@@ -62,18 +62,15 @@ class Game{
                 check:
                     bool isShip = false;
                     for(int i=0; i<entities.size(); i++){
-                        std::cout << entities[i]->getType() << std::endl;
                         if(entities[i]->getType() == 'S'){
                             isShip = true;
                         }
                     }
                     if(!isShip){
-                        goto end;
+                        return;
                     }
 
             }
-            end:
-                std::cout << "Game ended" << std::endl;
         }
 
 };
