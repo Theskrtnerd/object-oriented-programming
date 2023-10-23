@@ -8,7 +8,7 @@
 class Mine: public GameEntity{
     public:
         Mine(int x, int y): GameEntity(x, y, 'M'){};
-        Explosion explode(){
+        Explosion explode() override{
             this->setType('X');
             std::tuple<int, int> position_ = this->getPos();
             Explosion explosion(std::get<0>(position_),std::get<1>(position_));

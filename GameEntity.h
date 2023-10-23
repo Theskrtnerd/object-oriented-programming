@@ -1,13 +1,15 @@
-#ifndef GAME_ENTITY_H
-#define GAME_ENTITY_H
+#ifndef GAMEENTITY_H
+#define GAMEENTITY_H
 
 #include <tuple> 
+#include "Explosion.h"
 
 class GameEntity{
     protected:
         std::tuple<int, int> position;
         char type;
     public:
+        GameEntity();
         GameEntity(int x, int y, char type): type(type){
             position = std::make_tuple(x, y);
         };
@@ -20,10 +22,16 @@ class GameEntity{
         };
         void setPosition(int x, int y){
             position = std::make_tuple(x, y);
-        }
+        };
         void setType(char type){
             this->type = type;
-        }
+        };
+        virtual void move(int dx, int dy){    
+        };
+        virtual Explosion explode(){
+            Explosion explosion(0,0);
+            return explosion;
+        };
         ~GameEntity(){};
 };
 

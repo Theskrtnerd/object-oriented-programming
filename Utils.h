@@ -4,6 +4,7 @@
 #include <tuple>
 #include "GameEntity.h"
 #include <cmath>
+#include <cstdlib> 
 
 class Utils{
     public:
