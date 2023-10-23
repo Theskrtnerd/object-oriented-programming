@@ -1,8 +1,8 @@
 #ifndef EFFECT_H
 #define EFFECT_H
 
-#include "GameEntity.h"
 #include <tuple>
+#include "GameEntity.h"
 
 class Effect{
     public:
