@@ -25,7 +25,7 @@ class GameEntity{
         void setType(char type){
             this->type_ = type;
         }
-        ~GameEntity(){};
+        virtual ~GameEntity(){};
 };
 
 #endif

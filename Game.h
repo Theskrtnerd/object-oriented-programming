@@ -2,77 +2,70 @@
 #define GAME_H
 
 #include <vector>
+
+#include "Effect.h"
+#include "Explosion.h"
 #include "GameEntity.h"
-#include "Ship.h"
 #include "Mine.h"
+#include "Ship.h"
 #include "Utils.h"
-#include <iostream>
+using namespace std;
 
-class Game{
-    private:
-        std::vector<GameEntity*> entities;
-        std::vector<Ship> ships;
-        std::vector<Mine> mines;
-    public:
-        Game(){
-        };
-        std::vector<GameEntity*> get_entities(){
-            return entities;
-        };
-        void set_entities(std::vector<GameEntity*> entities_){
-            entities = entities_;
-        };
-        std::vector<GameEntity*> initGame(int numShips, int numMines, int gridWidth, int gridHeight){
-            // Utils util;
-            this->ships.resize(numShips);
-            this->mines.resize(numMines);
-            this->entities.resize(numShips+numMines);
-            for(int i=0;i<numShips;i++){
-                std::tuple<int, int> pos = Utils::generateRandomPos(gridHeight, gridHeight);
-                int x = std::get<0>(pos);
-                int y = std::get<1>(pos);
-                this->ships[i] = Ship(x,y);
-                this->entities[i] = &this->ships[i];
-            }
-            for(int j=0;j<numMines;j++){
-                std::tuple<int, int> pos = Utils::generateRandomPos(gridHeight, gridHeight);
-                int x = std::get<0>(pos);
-                int y = std::get<1>(pos);
-                this->mines[j] = Mine(x,y);
-                this->entities[numShips+j] = &this->mines[j];
-            }
-            return entities;
+class Game {
+ private:
+  vector<GameEntity*> entities;
+
+ public:
+  std::vector<GameEntity*> get_entities() { return entities; }
+  void set_entities(const std::vector<GameEntity*>& newEntities) {
+    entities = newEntities;
+  }
+  std::vector<GameEntity*> initGame(int numShips, int numMines, int gridWidth,
+                                    int gridHeight) {
+    std::vector<GameEntity*> newEntities;
+    for (int i = 0; i < numShips; i++) {
+      std::tuple<int, int> shipPos =
+          Utils::generateRandomPos(gridWidth, gridHeight);
+      newEntities.push_back(
+          new Ship(std::get<0>(shipPos), std::get<1>(shipPos)));
+    }
+
+    for (int i = 0; i < numMines; i++) {
+      std::tuple<int, int> minePos =
+          Utils::generateRandomPos(gridWidth, gridHeight);
+      newEntities.push_back(
+          new Mine(std::get<0>(minePos), std::get<1>(minePos)));
+    }
+
+    set_entities(newEntities);
+    return get_entities();
+  }
+  void gameLoop(int maxIterations, double mineDistanceThreshold) {
+    int iterations = 0;
+    while (iterations < maxIterations) {
+      for (GameEntity* entity : entities) {
+        if (dynamic_cast<Ship*>(entity)) {
+          Ship* ship = dynamic_cast<Ship*>(entity);
+          ship->move(1, 0);
         }
-        void gameLoop(int maxIterations, double mineDistanceThreshold){
-            Utils util;
-            for(int i=0; i<maxIterations; i++){
-                for(int j=0; j<ships.size();j++){
-                    ships[j].move(1,0);
-                }
-                loop:
-                    for(int j=0; j<ships.size();j++){
-                        for(int k=0;k<mines.size();k++){
-                            if(util.calculateDistance(ships[j].getPos(), mines[k].getPos()) < mineDistanceThreshold){
-                                Explosion explosion = mines[k].explode();
-                                explosion.apply(ships[j]);
-                                goto check;
-                            }
-                        }
-                    }
-                check:
-                    bool isShip = false;
-                    for(int i=0; i<entities.size(); i++){
-                        if(entities[i]->getType() == 'S'){
-                            isShip = true;
-                        }
-                    }
-                    if(!isShip){
-                        return;
-                    }
-
+        if (dynamic_cast<Mine*>(entity)) {
+          Mine* mine = dynamic_cast<Mine*>(entity);
+          for (GameEntity* shipEntity : entities) {
+            if (dynamic_cast<Ship*>(shipEntity)) {
+              Ship* ship = dynamic_cast<Ship*>(shipEntity);
+              double distance =
+                  Utils::calculateDistance(mine->getPos(), ship->getPos());
+              if (distance <= mineDistanceThreshold) {
+                Explosion e1 = mine->explode();
+                e1.apply(*ship);
+              }
             }
+          }
         }
-
+      }
+      iterations++;
+    }
+  }
 };
 
 #endif

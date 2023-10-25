@@ -1,15 +1,41 @@
 #include <iostream>
-using namespace std;
 
 #include "Game.h"
-#include "GameEntity.h"
-#include "Effect.h"
-#include "Explosion.h"
-#include "Ship.h"
-#include "Mine.h"
 
-int main(){
-    Game game;
-    std::vector<GameEntity*> entities = game.initGame(3, 4, 8, 9);
-    game.gameLoop(100, 2);
+#include <tuple>
+
+ 
+
+int main() {
+
+    Game myGame;
+
+    myGame.initGame(1, 1, 10, 10);
+
+    std::cout << "Initiate a game with 1 ship and 1 Mine\n";
+
+    for (auto entity : myGame.get_entities()) {
+
+        std::cout << "Entity Type: " << entity->getType() << "\n";
+
+    }
+
+    std::cout << "------------------\n";
+
+    std::cout << "After the game finishes\n";
+
+    myGame.gameLoop(1, 100.0);
+
+ 
+
+    for (auto entity : myGame.get_entities()) {
+
+        std::cout << "Entity Type: " << entity->getType() << "\n";
+
+    }
+
+ 
+
+    return 0;
+
 }
