@@ -6,6 +6,7 @@ using namespace std;
 #include "Trap.h"
 #include "Character.h"
 #include "Game.h"
+#include <vector>
 
 int main(){
     Game game;
@@ -26,11 +27,21 @@ int main(){
     cout << "Game starts" << endl;
     cout << "------------------" << endl;
 
-    game.initGame(2, 8, 3, 4);
-
+    game.initGame(1, 1, 3, 4);
+    vector grid = game.getGrid();
+    cout << "Current position of game objects: " << endl;
+    for (int i = 0; i < grid.size(); i++)
+    {
+        cout << grid[i]->getType() << ": " << get<0>(grid[i]->getPos()) << ", " << get<1>(grid[i]->getPos()) << endl;
+    }
     
-
     game.gameLoop(10, 2);
+
+    cout << "Current position of game objects: " << endl;
+    for (int i = 0; i < grid.size(); i++)
+    {
+        cout << grid[i]->getType() << ": " << get<0>(grid[i]->getPos()) << ", " << get<1>(grid[i]->getPos()) << endl;
+    }
 
     cout << "------------------" << endl;
     cout << "Game ended!" << endl;
