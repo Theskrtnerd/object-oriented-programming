@@ -1,4 +1,7 @@
-#pragma once
+#ifndef UTILS_H
+#define UTILS_H
+
+
 #include <cmath>
 #include <tuple>
 using namespace std;
@@ -22,3 +25,5 @@ class Utils {
     return distance;
   }
 };
+
+#endif

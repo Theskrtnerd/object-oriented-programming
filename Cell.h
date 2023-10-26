@@ -1,4 +1,7 @@
-#pragma once
+#ifndef CELL_H
+#define CELL_H
+
+
 #include <tuple>
 using namespace std;
 
@@ -15,3 +18,5 @@ class Cell {
   void setType(char type) { this->type = type; }
   virtual ~Cell() {}
 };
+
+#endif

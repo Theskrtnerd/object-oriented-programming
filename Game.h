@@ -1,4 +1,6 @@
-#pragma once
+#ifndef GAME_H
+#define GAME_H
+
 using namespace std;
 #include <iostream>
 #include <tuple>
@@ -80,3 +82,5 @@ class Game {
     }
   }
 };
+
+#endif

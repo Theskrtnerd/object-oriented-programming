@@ -1,4 +1,7 @@
-#pragma once
+#ifndef TRAP_H
+#define TRAP_H
+
+
 using namespace std;
 #include "Cell.h"
 #include "Effect.h"
@@ -15,3 +18,5 @@ class Trap : public Cell, public Effect {
     active = false;
   }
 };
+
+#endif
