@@ -30,6 +30,7 @@ int main(){
     game.initGame(1, 1, 3, 4);
     vector grid = game.getGrid();
     cout << "Current position of game objects: " << endl;
+    cout << grid.size();
     for (int i = 0; i < grid.size(); i++)
     {
         cout << grid[i]->getType() << ": " << get<0>(grid[i]->getPos()) << ", " << get<1>(grid[i]->getPos()) << endl;

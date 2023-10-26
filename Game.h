@@ -39,7 +39,7 @@ class Game{
                 Character player(x_, y_);
                 players[i] = player;
                 Character* player_ptr = &player;
-                grid[i] = player_ptr;
+                grid.push_back(player_ptr);
             }
 
             for(int i=0;i<numTraps;i++){
@@ -49,7 +49,7 @@ class Game{
                 Trap trap(x_, y_);
                 traps[i] = trap;
                 Trap* trap_ptr = &trap;
-                grid[numCharacters+i] = trap_ptr;
+                grid.push_back(trap_ptr);
             }
 
         }
@@ -81,6 +81,12 @@ class Game{
             std::cout << "Maximum number of iterations reached. Game over." << std::endl;
             return;
         }
+
+    ~Game(){
+        for(int i=0; i<grid.size();i++){
+            delete grid[i];
+        }
+    }
 };
 
 #endif
