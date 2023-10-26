@@ -14,6 +14,8 @@ class Game{
         std::vector<Character> players;
         std::vector<Trap> traps;
         int gridWidth;
+        int numPlayers;
+        int numTraps;
 
     public:
         Game(){}
@@ -23,6 +25,9 @@ class Game{
 
         void initGame(int numCharacters, int numTraps, int gridWidth, int gridHeight){
             this->gridWidth = gridWidth;
+            this->numTraps = numTraps;
+            this->numPlayers = numCharacters;
+
             grid.resize(numCharacters+numTraps);
             players.resize(numCharacters);
             traps.resize(numTraps);
@@ -55,7 +60,7 @@ class Game{
                 for(int i=0;i<players.size();i++){
                     players[i].move(1,0);
                 }
-                for(int i=0;i<players.size();i++){
+                for(int i=0;i<numTraps;i++){
                     for(int j=0;j<traps.size();j++){
                         if(Utils::calculateDistance(traps[j].getPos(), players[i].getPos()) < trapActivationDistance){
                             traps[j].apply(players[i]);
@@ -63,7 +68,7 @@ class Game{
                     }
                 }
 
-                for(int i=0;i<players.size();i++){
+                for(int i=0;i<numPlayers;i++){
                     int player_pos = std::get<0>(players[i].getPos());
                     if(player_pos > this->gridWidth && players[i].getType() == 'C'){
                         "Character has won the game!";

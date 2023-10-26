@@ -27,6 +27,9 @@ int main(){
     cout << "------------------" << endl;
 
     game.initGame(2, 8, 3, 4);
+
+    
+
     game.gameLoop(10, 2);
 
     cout << "------------------" << endl;
